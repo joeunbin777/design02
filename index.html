@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kriss.ai — static clone</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- floating background clouds -->
+<div class="bg">
+  <div class="cloud cloud--a"></div>
+  <div class="cloud cloud--b"></div>
+  <div class="cloud cloud--c"></div>
+</div>
+
+<!-- top bar -->
+<header class="topbar">
+  <div class="logo">Design</div>
+  <nav class="nav">
+  <a href="about.html">About</a>
+  <a href="resume.html">Resume</a>
+  <a href="#projects">Projects</a>         <!-- 같은 페이지의 섹션으로 스크롤 -->
+  <a href="#footer">Contact</a>            <!-- 페이지 맨 하단 footer로 스크롤 -->
+</nav>
+
+
+</header>
+
+<!-- hero -->
+<main class="hero">
+  <h1 id="typed" aria-live="polite"></h1>
+  <p id="sub" class="sub">시각적 임팩트와 사용자 중심 경험을 만들며,<br>리서치와 테스트에서 얻은 인사이트를 직관적이고 의미 있는 제품으로 구현합니다.</p>
+  <button id="cta" class="cta">Learn More</button>
+
+</main>
+
+<!-- portfolio section -->
+<section class="portfolio">
+  <div class="portfolio-main">
+    <img src="images/7.png" alt="Main Portfolio Thumbnail">
+  </div>
+  <div class="portfolio-thumbs">
+    <img src="images/9.png" alt="Thumbnail 1">
+    <img src="images/8.png" alt="Thumbnail 2">
+  </div>
+</section>
+
+<!-- CURRENT EXHIBITION -->
+        <section id="projects" class="section">
+            <div class="inner">
+                    <h2 class="section-title">Projects</h2>
+
+                <div class="current-grid">
+                    <!-- 왼쪽 이미지 -->
+                    <article class="current-item">
+                        <div class="image-wrap">
+                            <!-- src 를 네 이미지 파일로 바꿔줘 -->
+                            <img src="images/8.png" alt="project01">
+                        </div>
+                        <div class="caption">
+                            <p>mobile app service</p>
+                            <p>2025.11/19–12/27</p>
+                        </div>
+                    </article>
+
+                    <!-- 오른쪽 이미지 -->
+                    <article class="current-item">
+                        <div class="image-wrap">
+                            <img src="images/7.png" alt="project02">
+                        </div>
+                        <div class="caption caption-right">
+                            <p>mobile app service</p>
+                            <p>2025.11/19–12/27</p>
+                        </div>
+                    </article>
+
+                    <!--수정 이미지 추가-->
+                    <article class="current-item">
+                        <div class="image-wrap">
+                            <img src="images/9.png" alt="project02">
+                        </div>
+                        <div class="caption caption-right">
+                            <p>mobile app service</p>
+                            <p>2025.11/19–12/27</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+
+<!-- right-bottom chat trigger -->
+<button id="chatToggle" class="chat-toggle">E</button>
+
+<!-- chat panel -->
+<aside id="chatPanel" class="chat-panel" aria-hidden="true">
+  <header class="chat-head">
+    <strong>Ask Eunbin</strong>
+    <button id="chatClose" aria-label="close"></button>
+  </header>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" placeholder="Type your question..." autocomplete="off">
+    <button type="submit">Send</button>
+  </form>
+</aside>
+
+<script src="script.js"></script>
+
+ </div>
+</section>
+        <!--여기까지 삭제-->
+
+        <!-- ABOUT + SPACE IMAGE -->
+        <section class="section section-about">
+            <div class="inner about-layout">
+                <div class="about-text">
+                    <button class="about-button">About</button>
+
+                    <div class="about-info">
+                        <p>나만의 내용으로 변경</p>
+                        <p>32-11, Samseong-ro 63-gil, Gangnam-gu, Seoul, Republic of Korea</p>
+                        <p>E oaoagallery@gmail.com<br>T 02.6207.3211<br>@oaoa_gallery</p>
+
+                        <p class="about-hours">
+                            수 - 토요일, 11 - 18시 (월, 화, 일요일, 공휴일 휴관)<br>
+                            Wednesday - Saturday, 11am - 18pm<br>
+                            (Closed on Mon, Tue, Sunday and Holidays)
+                        </p>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="inner">
+            <p>Copyright 2022. oaoa gallery All rights reserved.</p>
+
+            <a href="#" class="to-top" aria-label="Back to top">
+                ↑
+            </a>
+        </div>
+    
+<!-- 페이지 맨 아래 (index.html) -->
+<footer id="footer" class="site-footer">
+  <div class="inner">
+    <p>Contact · 이메일: you@example.com · © 2025 Design</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
+

@@ -1,0 +1,499 @@
+/* Reset */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, 
+body{
+  height:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
+  font-family:Inter,system-ui;
+}
+
+body{
+  background:linear-gradient(180deg,#dbeeff 0%,#f7fbff 100%);
+  color:#071127;
+}
+
+/* Background clouds */
+.bg{
+  position:fixed;inset:0;
+  pointer-events:none;z-index:0
+}
+
+.cloud{
+  position:absolute;
+  background:rgba(255,255,255,0.85);
+  filter:blur(8px);
+  border-radius:50%;
+  opacity:.5
+}
+
+.cloud--a{
+  width:520px;
+  height:160px;
+  left:-260px;
+  top:8%;
+  animation:floatA 70s linear infinite
+}
+
+.cloud--b{
+  width:420px;
+  height:140px;
+  left:-300px;
+  top:40%;
+  transform:scale(1.1);
+  animation:floatB 85s linear infinite
+}
+
+.cloud--c{
+  width:300px;
+  height:120px;
+  left:-320px;
+  top:72%;
+  transform:scale(.9);
+  animation:floatC 95s linear infinite
+}
+
+/* Topbar */
+.topbar{
+  position:fixed;
+  top:28px;
+  left:28px;
+  right:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:20
+}
+
+.logo{
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:3px
+}
+
+.nav a{
+  margin-left:22px;
+  text-decoration:none;
+  color:inherit;
+  font-weight:500;
+  opacity:.90
+}
+
+/* Hero */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding-bottom:200px;
+  transition:all .5s ease;
+}
+
+#typed{
+  font-size:64px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.sub{
+  margin-top:18px;
+  color:rgba(7,17,39,.6);
+  font-size:18px;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .6s ease
+}
+
+.cta{
+  margin-top:30px;
+  padding:16px 32px;
+  border-radius:12px;
+  border:2px solid rgba(0, 0, 0, 0.08);
+  background:rgba(255, 255, 255, 0.9);
+  cursor:pointer;
+  opacity:0;
+  transform:translateY(8px);
+  transition:all .35s ease
+  position: relative;  /* 버튼 위치를 일반 flow로 */
+  z-index: 10;         /* 배경(.bg)보다 위에 있도록 */
+}
+
+
+/* Portfolio */
+
+/* 섹션 전체 */
+.section {
+    padding-top: 0px;  /* 위쪽 여백 ↑ */
+    padding-bottom: 120px; /* 아래쪽 여백 ↑ */
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 60px; /* 제목 아래 공간 ↑ */
+    margin-left: 30px;
+    text-transform: uppercase;
+}
+
+.portfolio{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:30px;
+  padding-bottom:50px;
+}
+
+.portfolio-main img{
+  width:80%;
+  max-width:0px;
+  border-radius:16px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+}
+
+.portfolio-thumbs{
+  display:flex;
+  gap:16px;
+  margin-top:24px;
+}
+
+.portfolio-thumbs img{
+  width:120px;
+  border-radius:12px;
+  opacity:0;
+  transform:translateY(20px);
+  transition:all .6s ease;
+}
+
+.show{
+  opacity:1 !important;
+  transform:translateY(0) !important
+}
+
+/* Left-bottom helper */
+.left-help{
+  position:fixed;
+  left:24px;
+  bottom:20px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  z-index:20
+}
+
+.left-help .dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  border:2px solid #071127;
+  animation:pop 1.6s infinite
+}
+
+@keyframes pop{
+  0%,100%{transform:translateY(0)}50%{
+    transform:translateY(-6px)}
+}
+
+.left-help .help-text{
+  font-size:13px;
+  color:rgba(7,17,39,.9)
+}
+
+/* Chat toggle */
+.chat-toggle{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  background:#071127;
+  color:#fff;
+  border:none;
+  font-weight:700;
+  z-index:30;
+  box-shadow:0 12px 30px rgba(7,17,39,.12);
+  cursor:pointer
+}
+
+/* Chat panel */
+.chat-panel{
+  position:fixed;
+  right:24px;
+  bottom:96px;
+  width:360px;
+  height:480px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 18px 40px rgba(7,17,39,.18);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  z-index:40;
+  transform:translateY(12px);
+  opacity:0;
+  transition:all .28s ease
+}
+
+.chat-panel.open{
+  transform:translateY(0);
+  opacity:1
+}
+
+.chat-head{
+  background:#071127;
+  color:#fff;
+  padding:12px 14px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-weight:700
+}
+
+.chat-body{
+  flex:1;
+  padding:12px;
+  overflow:auto
+}
+
+.chat-form{
+  display:flex;
+  padding:12px;
+  border-top:1px solid #f0f0f0
+}
+
+.chat-form input{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  border:1px solid #eee;
+  margin-right:8px
+}
+
+.chat-form button{
+  padding:8px 14px;
+  border-radius:10px;
+  background:#071127;
+  color:#fff;
+  border:none
+}
+
+/* Responsive */
+@media (max-width:780px){
+  #typed{font-size:34px}
+  .chat-panel{width:92vw;right:4vw}
+  .portfolio-thumbs img{width:90px}
+  .hero {padding-bottom: 120px; /* 기존 200px → 모바일에서 줄임 */
+}
+
+}
+
+/* ----------------------------- */
+/* CURRENT EXHIBITION (추가된 섹션) */
+/* ----------------------------- */
+
+.current-grid{
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 48px;
+    margin: 32px;
+}
+
+/* 이미지 박스 */
+.current-item .image-wrap{
+    background-color: #f5f5f5;
+    overflow: hidden;
+    aspect-ratio: 4 / 3; /* 4:3 비율 유지 */
+}
+
+/* 이미지 속성 */
+.current-item .image-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 캡션 */
+.caption{
+    text-align:right;
+    font-size: 16px;
+    margin-top: 16px;
+    color: #555;
+}
+
+/* 오른쪽 정렬 */
+.caption-right{
+    text-align: right;
+}
+
+.caption-right a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #555;
+}
+
+@media (max-width: 900px){
+    .current-grid,
+    .projects-grid{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* PAST EXHIBITION 하단 그리드 */
+.past-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.past-item .image-wrap{
+    background-color: #f5f5f5;
+}
+
+/* ABOUT 섹션 */
+.section-about{
+    padding-bottom: 80px;
+}
+
+.about-layout{
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-button{
+    border: 1px solid #000;
+    background: transparent;
+    padding: 6px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.about-info{
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.about-hours{
+    margin-top: 16px;
+}
+
+.about-image{
+    background-color: #f5f5f5;
+}
+
+/* FOOTER */
+.site-footer{
+    border-top: 1px solid #eee;
+    padding: 16px 0;
+    font-size: 11px;
+}
+
+/* -----------------------------
+   모바일 반응형
+----------------------------- */
+@media (max-width: 780px) {
+
+  /* Hero */
+  .hero {
+    padding-bottom: 120px; /* 여백 줄이기 */
+  }
+
+  #typed {
+    font-size: 32px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  .cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  /* Portfolio */
+  .portfolio-main img {
+    width: 100%;
+  }
+
+  .portfolio-thumbs {
+    gap: 12px;
+  }
+
+  .portfolio-thumbs img {
+    width: 80px;
+  }
+
+  /* Projects 섹션 */
+  .section-title {
+    font-size: 20px;
+    margin-left: 16px;  /* 왼쪽 여백 최소화 */
+    margin-bottom: 32px; /* 제목과 그리드 간격 줄이기 */
+  }
+
+  .current-grid {
+    grid-template-columns: 1fr; /* 1열로 변경 */
+    margin: 16px; /* 여백 조정 */
+    gap: 24px;
+  }
+
+  .current-item .caption,
+  .current-item .caption-right {
+    text-align: left; /* 모바일에서는 왼쪽 정렬 */
+    font-size: 14px;
+  }
+
+  /* About 섹션 */
+  .about-layout {
+    grid-template-columns: 1fr; /* 1열로 변경 */
+    gap: 20px;
+  }
+
+  .about-info {
+    font-size: 12px;
+  }
+
+  /* Footer */
+  .site-footer {
+    font-size: 10px;
+    padding: 12px 0;
+  }
+
+  /* Topbar */
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  /* Chat panel */
+  .chat-panel {
+    width: 90vw;
+    right: 5vw;
+    bottom: 90px;
+  }
+
+  /* Cloud 배경 크기 줄이기 */
+  .cloud--a { width: 360px; height: 110px; }
+  .cloud--b { width: 280px; height: 100px; }
+  .cloud--c { width: 200px; height: 80px; }
+}
